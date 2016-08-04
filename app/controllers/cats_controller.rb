@@ -1,4 +1,8 @@
+# require 'byebug'
+
 class CatsController < ApplicationController
+  before_action :cat_belongs_to_owner, only: [:edit, :update]
+
   def index
     @cats = Cat.all
     render :index
