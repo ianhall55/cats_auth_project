@@ -17,4 +17,5 @@ group :development do
   gem 'spring'
   gem 'pry-rails'
   gem 'table_print'
+  gem 'letter_opener'
 end

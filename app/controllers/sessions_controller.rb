@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
   before_action :login_status, only: [:new, :create]
+
   def new
   end
 

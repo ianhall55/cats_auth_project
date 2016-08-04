@@ -9,6 +9,9 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       log_in(@user)
+      msg = UserMailer.welcome_email(@user)
+      msg.deliver
+      
       redirect_to cats_url
     else
       flash.now[:errors] = @user.errors.full_messages

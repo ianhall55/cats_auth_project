@@ -1,7 +1,7 @@
 <h2>Log in</h2>
 
 <form action="/session" method="POST">
-  <input name="authenticity_token"  value="<%= form_authenticity_token %>" type="hidden">
+  <%= auth_token %>
   <label>
     Username:
     <input type="text" name="session[username]">
@@ -12,3 +12,14 @@
   </label>
   <input type="submit" value="log in">
 </form>
+
+<br>
+<label>
+  <%= button_to "Sign Up", new_user_url, method: :get%>
+</label>
+
+<% content_for :footer do %>
+  <p>
+    This is the page to login
+  </p>
+<% end %>

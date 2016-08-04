@@ -19,9 +19,17 @@
     <h2>User: <%= current_user.username %></h2>
     <%= button_to :logout, session_url, method: :delete %>
   <% else %>
-    <%= button_to :login, session_url, method: :log_in %>
+    <%= button_to :login, new_session_url, method: :get %>
   <% end %>
 </header>
 <%= yield %>
+
+<footer>
+  <p>
+    99 cats site. Best cat rentals in the world!
+
+    <%= yield :footer %>
+  </p>
+</footer>
 </body>
 </html>
